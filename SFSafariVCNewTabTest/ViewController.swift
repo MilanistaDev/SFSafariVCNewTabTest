@@ -7,19 +7,21 @@
 //
 
 import UIKit
+import SafariServices
 
 class ViewController: UIViewController {
+
+    private let firstUrlStr = "https://milanista224.blogspot.com/p/html.html"
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func openSFSafariViewController(_ sender: Any) {
+        let url = URL(string: firstUrlStr)
+        let sfSafariVC = SFSafariViewController(url: url!)
+        self.present(sfSafariVC, animated: true, completion: nil)
     }
-
-
 }
 
